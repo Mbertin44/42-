@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:34:20 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/05 13:53:37 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/11 11:39:12 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,5 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
+
+/* String research cherche un caractere c dans la chaine de caractere s et return la chaine de caractere en char.*/

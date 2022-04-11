@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 13:57:13 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/11 09:40:44 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/08 13:41:42 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/11 09:35:59 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strtrim(char const *src, char const *set)
 {
-	size_t	i;
+	int	end;
 
-	i = 0;
-	if (dst == NULL && src == NULL)
+	if (!src || !set)
 		return (NULL);
-	if (dst > src)
+	while (*src && ft_strchr(set, *src))
+		src++;
+	end = ft_strlen(src);
+	while (end && ft_strchr(set, src[end]))
 	{
-		while (len > 0)
-		{
-			*(char *)(dst + (len - 1)) = *(char *)(src + (len - 1));
-			len--;
-		}
+		end--;
 	}
-	else
-	{
-		while (i < len)
-		{
-			*(char *)(dst + i) = *(char *)(src + i);
-			i++;
-		}
-	}
-	return (dst);
+	return (ft_substr(src, 0, end + 1));
 }
+/* 	strtrim va chercher le caractere set dans la chaine s et retourne une copie de la chaine s 
+	sans les caracères spécifiés dans set au début et à la fin de la chaine de caracteres 		*/
