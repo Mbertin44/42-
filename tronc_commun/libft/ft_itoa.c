@@ -50,9 +50,3 @@ char *ft_itoa(int n)
     }
     return (temp); 
 }
-
-int main(void)
-{
-    printf(ft_itoa(12345));
-    return (0);
-}
