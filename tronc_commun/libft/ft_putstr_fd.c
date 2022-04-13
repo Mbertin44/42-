@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 14:28:12 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/13 15:10:49 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/13 15:12:04 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/13 15:17:18 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	if (!s)
 		return ;
 	while (s[i] != '\0')
 	{
-		f(i, &s[i]); /*	s'écrit aussi f(i, s + i); Je dois mettre & devant 
-						s[i] car le char donné en parametre 
-						est un pointeur */
+		write (fd, &s[i], 1);
 		i++;
 	}
 }
