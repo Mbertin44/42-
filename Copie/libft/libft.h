@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 12:08:19 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/13 16:07:53 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/15 09:57:06 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include<stdlib.h>
 # include<unistd.h>
 # include<stdio.h>
+# include<string.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
