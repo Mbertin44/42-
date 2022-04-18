@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 08:52:54 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/15 12:30:15 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/15 11:52:06 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/15 12:16:24 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+size_t	ft_strlen(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < len)
-	{
-		*(char *)(b + i) = (char)c;
+	while (s[i] != '\0')
 		i++;
-	}
-	return (b);
+	return (i);
+}
+
+int main(int argc, char const *argv[])
+{
+	printf("%zu\n", ft_strlen("coucou"));
+	printf("%zu\n", strlen("coucou"));
+	printf("%zu\n", ft_strlen("1234"));
+	printf("%zu\n", strlen("1234"));
+	printf("%zu\n", ft_strlen(" "));
+	printf("%zu\n", strlen(" "));
+	printf("%zu\n", ft_strlen(""));
+	printf("%zu\n", strlen(""));
+
+	return 0;
 }

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 08:52:54 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/15 12:30:15 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/15 12:51:24 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/15 13:17:56 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	memset(s, 0, n);
+}
 
-	i = 0;
-	while (i < len)
-	{
-		*(char *)(b + i) = (char)c;
-		i++;
-	}
-	return (b);
+int main(int argc, char const *argv[])
+{
+	char	a[] = "coucou";
+	
+	printf("%s\n", a);
+	ft_bzero(a, 3);
+	printf("%s\n", a);
+	return 0;
 }

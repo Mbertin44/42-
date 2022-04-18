@@ -5,36 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 13:57:13 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/15 15:30:50 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/15 14:52:53 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/15 15:11:35 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	if (dst == NULL && src == NULL)
+	if (!dst || !src)
 		return (NULL);
-	if (dst > src)
+	if (src > dst)
 	{
-		while (len > 0)
+		while (len-- > 0)
 		{
-			*(char *)(dst + (len - 1)) = *(char *)(src + (len - 1));
-			len--;
+			*(char *)(dst + len_dst) = *(char *)(src + len_src);
 		}
 	}
-	else
-	{
-		while (i < len)
-		{
-			*(char *)(dst + i) = *(char *)(src + i);
-			i++;
-		}
-	}
+	while (len-- > 0)
+		*(char *)(dst + len) = *(char *)(src + len);
 	return (dst);
+}
+
+int main(int argc, char const *argv[])
+{
+	char	a[] = "coucou";
+	char	b[] = "helloo";
+	
+	printf("%s\n", ft_memmove(a, b, 3));
+	printf("%s\n", memmove(a, b, 3));
+	printf("%s\n", ft_memmove(a, b, 5));
+	printf("%s\n", memmove(a, b, 5));
+	return 0;
 }

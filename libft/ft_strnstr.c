@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:50:13 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/15 09:50:50 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/15 14:34:17 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *str, const char *found, size_t n)
 	while (i < n && str[i] != '\0')
 	{
 		j = 0;
-		while (j < n && str[i + j] == found[j])
+		while (i + j < n && str[i + j] == found[j])
 		{
 			if (found[j + 1] == '\0')
 				return ((char *) str + i);

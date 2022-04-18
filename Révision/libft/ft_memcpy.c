@@ -5,28 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 12:43:21 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/15 15:22:37 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/15 13:59:48 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/15 15:34:36 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdio.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	if (!dst && !src)
+	if (!dst || !src)
 		return (NULL);
-	while (i < n)
-	{
-		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
-		i++;
-	}
+	while (n-- > 0)
+		*(char *)(dst + n) = *(char *)(src + n);
 	return (dst);
 }
 
-/* 	*(unsigned char *)(dst + i) est l'équivalent de dst[i] sauf que je fais 
-	un cast de void vers char */
+/* 	Ce code ne marche pas car il va modifier dest même si il y a un overlap 
+	Je devrais plutot faire une boucle while(i < n) et incrémenter i au fur et a mesure */
+
+int main(int argc, char const *argv[])
+{
+	char	a[] = "coucou";
+	char	b[] = "helloo";
+	
+	printf("%s\n", ft_memcpy(a, b, 3));
+	printf("%s\n", memcpy(a, b, 3));
+	printf("%s\n", ft_memcpy(a, b, 11));
+	printf("%s\n", memcpy(a, b, 11));
+	return 0;
+}
