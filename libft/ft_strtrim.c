@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 13:41:42 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/11 09:35:59 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/19 14:34:05 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,14 @@ char	*ft_strtrim(char const *src, char const *set)
 	}
 	return (ft_substr(src, 0, end + 1));
 }
-/* 	strtrim va chercher le caractere set dans la chaine s et retourne une copie de la chaine s 
-	sans les caracères spécifiés dans set au début et à la fin de la chaine de caracteres 		*/
+/* 	strtrim va chercher la chaine de caractere set dans la chaine src et retourne 
+	une copie de la chaine src sans les caracères spécifiés dans set au début et
+	 à la fin de la chaine de caracteres */
+int main(int argc, char const *argv[])
+{
+	char	a[] = "";
+	char	b[] = "";
+	
+	printf("%s\n", ft_strtrim(a, b));
+	return 0;
+}

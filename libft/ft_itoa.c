@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:41:24 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/13 11:06:48 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/18 14:29:03 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ char	*ft_itoa(int n)
 {
 	char	*temp;
 	int		i;
-	int		sign;
+	 int		sign;
 
-	sign = 0;
+	 sign = 0;
 	i = ft_intlen(n) - 1; // "-1" pour ne pas commencer par mon "\0"
 	temp = ft_calloc(ft_intlen(n) + 1, sizeof(char)); // +1 car il faut '\0' à la fin
 	if (!temp)

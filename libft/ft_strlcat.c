@@ -6,31 +6,35 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 10:09:48 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/05 12:46:25 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/19 12:54:06 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* 	strlcat va copier x caractere (dstsize) de src à la fin de dst et retourner
+	la longuer de src + dst. Si jamais dst est plus petit que dstsize dans ce 
+	cas strlcat va seulement renvoyer la longueur de dst + src. Je suppose que
+	cette condition existe pour dans le cas ou dst et src serait la meme
+	chaine de caractere. Par exemple si je lui dis de copier 6 caractere de abc 
+	( qui sera à la fois ma src et dst )dans dst ca ne sera pas possible car 
+	elle contient seulement 3 caractere. */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
 	size_t	len_dst;
+	size_t	len_src;
 
-	i = 0;
-	j = 0;
 	len_dst = ft_strlen(dst);
-	if (dstsize <= 0)
-		return (dstsize + ft_strlen(src));
-	while (dst[i] != '\0' && i < dstsize)
-		i++;
+	len_src = ft_strlen(src);
+	i = len_dst;
+	j = 0;
+	if (len_dst > dstsize || dstsize <= 0)
+		return (dstsize + len_src);
 	while (src[j] != '\0' && i < dstsize - 1)
 		dst[i++] = src[j++];
-	if (dstsize != 0 && dstsize >= len_dst)
-		dst[i] = '\0';
-	if (dstsize < ft_strlen(dst))
-		return (ft_strlen(src) + dstsize);
-	else
-		return (ft_strlen(src) + len_dst);
+	dst[i] = '\0';
+	return (len_src + len_dst);
 }

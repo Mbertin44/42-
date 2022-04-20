@@ -6,7 +6,7 @@
 #    By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 13:53:50 by mbertin           #+#    #+#              #
-#    Updated: 2022/04/13 16:08:08 by mbertin          ###   ########.fr        #
+#    Updated: 2022/04/19 10:08:29 by mbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ AR = ar rcs
 
 CC = gcc
 
-RM = rm -f
+RM = rm -f 
 
 CFLAGS = -Wall -Werror -Wextra
 

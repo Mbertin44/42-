@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:41:24 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/13 11:06:48 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/18 14:14:14 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_intlen(int nbr)
 		return (1);
 	if (nbr < 0)
 		i++;
-	while (nbr)
+	while (nbr != 0)
 	{
-		nbr /= 10;
 		i++;
+		nbr /= 10;
 	}
 	return (i);
 }
@@ -36,12 +36,12 @@ char	*ft_itoa(int n)
 	int		sign;
 
 	sign = 0;
-	i = ft_intlen(n) - 1; // "-1" pour ne pas commencer par mon "\0"
-	temp = ft_calloc(ft_intlen(n) + 1, sizeof(char)); // +1 car il faut '\0' à la fin
+	i = ft_intlen(n);
+	temp = ft_calloc(i + 1, sizeof(char)); // +1 car il faut '\0' à la fin
 	if (!temp)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_memcpy(temp, "-2147483648", 11));
+	/*if (n == -2147483648)
+		return (ft_memcpy(temp, "-2147483648", 11));*/
 	if (n < 0)
 	{
 		sign = 1;
