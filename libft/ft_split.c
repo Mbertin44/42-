@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:39:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/11 13:30:20 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 12:06:22 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ static	int	ft_count_word(char const *src, char sep)
 	return (words);
 }
 /* 	Je déclare **tab qui va être mon tableau qui va contenir mes différentes str,
-	int words pour le nombre de str à créer, int i pour me déplacer dans ma chaine,
+	int words pour le nombre de str à créer, int i pour me déplacer dans mon tableau,
 	et int len pour connaitre la longueur des différentes chaine de caractères.
 	
 	Je fais un calloc sur mon tableau de chaine "tab". Il m'alloue la mémoire pour 
 	des char fois le nombre de mots que j'ai besoin (words).
 	
-	je déclare mon i à -1 car j'utilise i++ et pas ++i dans mon while (donc quand ma
+	je déclare mon i à -1 car j'utilise ++i et pas i++ dans mon while (donc quand ma
 	boucle commence i = 0 et pas -1. Je dois faire ça et pas l'inverse sinon je 
 	n'arrive pas à mon derniers mot dans ma boucle).
 
@@ -79,8 +79,21 @@ char	**ft_split(char const *src, char sep)
 			len = ft_strlen(src);
 		tab[i] = ft_substr(src, 0, len);
 		if (!tab[i])
-			return (0);
+			return (NULL);
 		src += len;
 	}
 	return (tab);
+}
+int main()
+{
+	int i = 0;
+	char **tab;
+
+	tab = ft_split("bonjour je déteste libft", ' ');
+	while (i < 4)
+	{
+		printf("string %d : %s\n", i, tab[i]);
+		i++;
+	}
+	return (0);
 }
