@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:41:24 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/18 14:29:03 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 13:37:19 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ char	*ft_itoa(int n)
 {
 	char	*temp;
 	int		i;
-	 int		sign;
+	int		sign;
 
-	 sign = 0;
-	i = ft_intlen(n) - 1; // "-1" pour ne pas commencer par mon "\0"
-	temp = ft_calloc(ft_intlen(n) + 1, sizeof(char)); // +1 car il faut '\0' à la fin
+	sign = 0;
+	i = ft_intlen(n) - 1;
+	temp = ft_calloc(ft_intlen(n) + 1, sizeof(char));
 	if (!temp)
 		return (NULL);
 	if (n == -2147483648)
@@ -45,11 +45,11 @@ char	*ft_itoa(int n)
 	if (n < 0)
 	{
 		sign = 1;
-		n *= -1; // Je passe mon négatif en positif car le '-' prend un espace en plus dans mon tableau
+		n *= -1;
 	}
 	while (i >= 0)
 	{
-		temp[i] = n % 10 + '0'; // + '0' pour qu'il comprenne qu'on parle pas de ascii
+		temp[i] = n % 10 + '0';
 		n /= 10;
 		if (i == 0 && sign == 1)
 			temp[0] = '-';
@@ -57,5 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (temp);
 }
-/* 	Je décide de commencer par la fin car j'utilise modulo à mon avantage. 
-	Je n'ai pas d'outils équivalent si jamais j'avais commencé du début. */

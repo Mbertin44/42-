@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:39:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/11 13:30:20 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 13:38:26 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,17 @@ char	**ft_split(char const *src, char sep)
 		src += len;
 	}
 	return (tab);
+}
+int main()
+{
+	int i = 0;
+	char **tab;
+
+	tab = ft_split("bonjour je déteste libft", ' ');
+	while (i < 4)
+	{
+		printf("string %d : %s\n", i, tab[i]);
+		i++;
+	}
+	return (0);
 }

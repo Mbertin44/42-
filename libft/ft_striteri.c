@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 14:28:12 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/13 15:10:49 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 13:48:16 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		return ;
 	while (s[i] != '\0')
 	{
-		f(i, &s[i]); /*	s'écrit aussi f(i, s + i); Je dois mettre & devant 
-						s[i] car le char donné en parametre 
-						est un pointeur */
+		f(i, &s[i]);
 		i++;
 	}
 }

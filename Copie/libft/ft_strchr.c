@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:34:20 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/11 11:39:12 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 13:39:31 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
-
-/* String research cherche un caractere c dans la chaine de caractere s et return la chaine de caractere en char.*/
+/* 	strchr va prendre le caractere c (qui à était cast en char) et le comparer
+	 à la chaine s. Quand 'c' est trouvé au complet dans 's' la fonction va 
+	 retourner la chaine de caractere 's' à partir de l'occurence qu'on 
+	 lui à demandé de trouver. */ 

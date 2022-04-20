@@ -6,19 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 10:09:48 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/19 12:54:06 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 13:49:23 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* 	strlcat va copier x caractere (dstsize) de src à la fin de dst et retourner
-	la longuer de src + dst. Si jamais dst est plus petit que dstsize dans ce 
-	cas strlcat va seulement renvoyer la longueur de dst + src. Je suppose que
-	cette condition existe pour dans le cas ou dst et src serait la meme
-	chaine de caractere. Par exemple si je lui dis de copier 6 caractere de abc 
-	( qui sera à la fois ma src et dst )dans dst ca ne sera pas possible car 
-	elle contient seulement 3 caractere. */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
