@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:39:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/20 13:38:28 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 14:00:40 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	**ft_split(char const *src, char sep)
 	if (!src)
 		return (NULL);
 	words = ft_count_word(src, sep);
-	tab = calloc(sizeof(char *), (words + 1));
+	tab = ft_calloc(sizeof(char *), (words + 1));
 	i = -1;
 	while (++i < words)
 	{
