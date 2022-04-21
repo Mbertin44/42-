@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:18:21 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/11 11:38:38 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/20 14:22:21 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	temp[i] = '\0';
 	return (temp);
 }
-/* 	Retourne le segment de string défini par start (le commencement de ma chaine) et len (la longeur de ma chaine). */
+/* 	Retourne le segment de string défini par start (le commencement de ma chaine)
+	 et len (la longeur de ma chaine). */

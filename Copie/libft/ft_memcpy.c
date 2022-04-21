@@ -6,12 +6,15 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:43:21 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/13 09:07:30 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/21 14:28:35 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 #include<stdio.h>
+
+/* La fonction memcpy() copie n octets depuis la zone mémoire src 
+	vers la zone mémoire dest. */
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -28,5 +31,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-/* 	*(unsigned char *)(dst + i) est l'équivalent de dst[i] sauf que je fais 
-	un cast de void vers char */
+/* 	ATTENTION : *(dst + i) veut dire la chaine dst à partir de i et pas le 
+	caractere i de la chaine dst */
