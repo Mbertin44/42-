@@ -6,11 +6,15 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:03:16 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/05 14:15:23 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/22 12:56:14 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
+/*	strncmp() renvoient un entier inférieur, égal ou supérieur à zéro si s1 (ou 
+	ses n premiers octets) est respectivement inférieure, égale ou supérieure 
+	à s2. */
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

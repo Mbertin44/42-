@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:39:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/21 15:58:46 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/22 13:03:58 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ char	**ft_split(char const *src, char sep)
 		else
 			len = ft_strlen(src);
 		tab[i] = ft_substr(src, 0, len);
-		if (!tab[i])
-			return (NULL);
 		src += len;
 	}
 	return (tab);

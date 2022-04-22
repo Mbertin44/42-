@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 12:23:32 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/13 16:05:57 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/22 09:22:16 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (temp);
 }
 
-char test(int n, char c)
+char f(unsigned int n, char c)
 {
 	return ((char) n + c ); /* 	si n = 0 alors j'écris 0 + c donc toujours c. 
 								Par contre au moment de l'incrémentation n = 1.
@@ -46,6 +46,6 @@ char test(int n, char c)
 }
 int main(int argc, char const *argv[])
 {
-	ft_strmapi("coucou", &test);
+	printf("%s\n", ft_strmapi("coucou", &f));
 	return 0;
 }

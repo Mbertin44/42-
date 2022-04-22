@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:39:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/20 14:02:47 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/22 12:31:00 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static	int	ft_count_word(char const *src, char sep)
 	trouve dans src et le copier dans une adresse allouer dans mon tabealu tab
 	
 	 */
+
 char	**ft_split(char const *src, char sep)
 {
 	char	**tab;

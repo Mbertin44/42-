@@ -6,11 +6,14 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:17:38 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/08 09:54:32 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/22 12:50:51 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
+/*	strjoin va prendre les chaines de caracteres s1 et s2 et retourner une 
+	nouvelle chaine de caractere qui va contenir s1 et s2 à la suite */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
