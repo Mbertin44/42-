@@ -6,13 +6,13 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:41:24 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/21 15:32:41 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/25 11:42:15 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_intlen(int nbr)
+static int	ft_intlen(int nbr)
 {
 	int	i;
 
