@@ -6,7 +6,7 @@
 #    By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 13:53:50 by mbertin           #+#    #+#              #
-#    Updated: 2022/04/20 12:44:30 by mbertin          ###   ########.fr        #
+#    Updated: 2022/04/25 09:10:32 by mbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ RM = rm -f
 
 CFLAGS = -Wall -Werror -Wextra
 
+all: ${NAME}
+
 ${NAME}: ${OBJS} 
 	${AR} ${NAME} ${OBJS}
-
-all: ${NAME}
 
 clean: 
 	${RM} ${OBJS}
