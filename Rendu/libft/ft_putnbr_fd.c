@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 13:13:34 by mbertin           #+#    #+#             */
-/*   Updated: 2022/03/31 13:15:15 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/13 15:21:14 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/22 14:11:02 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return ;
-	while (i < n)
+	if (n == -2147483648)
 	{
-		*(char *)(s + i) = 0;
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd('8', fd);
 	}
-}
-
-int	main(void)
-{	
-	char str[] = "coucou";
-
-	printf(("%s\n"), str);
-	ft_bzero(str, 3);
-	printf(("%s\n"), str);
-	return (0);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+	{
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+		}
+		ft_putchar_fd(48 + n % 10, fd);
+	}
 }

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 14:06:58 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/04 09:06:34 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/13 12:23:32 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/20 13:50:25 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stdio.h>
+#include"libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
+	char	*temp;
+	int		i;
 
 	i = 0;
-	while (s[i])
+	if (!s)
+		return (NULL);
+	temp = ft_strdup((char *)s);
+	if (!temp)
+		return (NULL);
+	while (temp[i])
+	{
+		temp[i] = f(i, temp[i]);
 		i++;
-	return (i);
-}
-
-int	main(void)
-{
-	char	c[50] = "coucou";
-	
-	printf("%zu\n", ft_strlen(c));
-	return (0);
+	}
+	return (temp);
 }
