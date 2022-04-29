@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 10:09:48 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/20 13:49:29 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/04/29 13:12:57 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[i++] = src[j++];
 	dst[i] = '\0';
 	return (len_src + len_dst);
+}
+int main(void)
+{
+    char    src[] = "bonjour";
+    char    dest[] = "salut";
+    printf(":%s:\n", src);
+    printf(":%s:\n", dest);
+    strlcat(dest, src, 20);
+    printf(":%s:\n:%zu:\n", dest, strlcat(dest, src, 20));
+    return (0);
 }
