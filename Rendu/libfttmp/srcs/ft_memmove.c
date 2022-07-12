@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 15:21:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/22 14:11:02 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/04 13:57:13 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/15 15:30:50 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+#include<stdio.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (n == -2147483648)
+	size_t	i;
+
+	i = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (dst > src)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('8', fd);
-	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
+		while (len > 0)
+		{
+			*(char *)(dst + (len - 1)) = *(char *)(src + (len - 1));
+			len--;
+		}
 	}
 	else
 	{
-		if (n > 9)
+		while (i < len)
 		{
-			ft_putnbr_fd(n / 10, fd);
+			*(char *)(dst + i) = *(char *)(src + i);
+			i++;
 		}
-		ft_putchar_fd(48 + n % 10, fd);
 	}
+	return (dst);
 }

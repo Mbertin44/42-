@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 15:21:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/22 14:11:02 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/06 09:50:13 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/15 14:34:17 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strnstr(const char *str, const char *found, size_t n)
 {
-	if (n == -2147483648)
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (found[i] == '\0')
+		return ((char *)str);
+	while (i < n && str[i] != '\0')
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('8', fd);
-	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
-	}
-	else
-	{
-		if (n > 9)
+		j = 0;
+		while (i + j < n && str[i + j] == found[j])
 		{
-			ft_putnbr_fd(n / 10, fd);
+			if (found[j + 1] == '\0')
+				return ((char *) str + i);
+			j++;
 		}
-		ft_putchar_fd(48 + n % 10, fd);
+		i++;
 	}
+	return (NULL);
 }

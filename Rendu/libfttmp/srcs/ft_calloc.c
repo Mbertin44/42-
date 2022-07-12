@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 15:21:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/22 14:11:02 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/06 13:19:45 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/20 14:08:26 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	*ft_calloc(size_t nbr, size_t size)
 {
-	if (n == -2147483648)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('8', fd);
-	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
-	}
-	else
-	{
-		if (n > 9)
-		{
-			ft_putnbr_fd(n / 10, fd);
-		}
-		ft_putchar_fd(48 + n % 10, fd);
-	}
+	void	*tab;
+
+	if (nbr == SIZE_MAX && size == SIZE_MAX)
+		return (NULL);
+	tab = malloc(nbr * size);
+	if (!tab)
+		return (NULL);
+	ft_bzero(tab, nbr * size);
+	return (tab);
 }

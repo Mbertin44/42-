@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 15:21:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/22 14:11:02 by mbertin          ###   ########.fr       */
+/*   Created: 2022/04/08 13:41:42 by mbertin           #+#    #+#             */
+/*   Updated: 2022/04/20 13:51:09 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_strtrim(char const *src, char const *set)
 {
-	if (n == -2147483648)
+	int	end;
+
+	if (!src || !set)
+		return (NULL);
+	while (*src && ft_strchr(set, *src))
+		src++;
+	end = ft_strlen(src);
+	while (end && ft_strchr(set, src[end]))
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('8', fd);
+		end--;
 	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
-	}
-	else
-	{
-		if (n > 9)
-		{
-			ft_putnbr_fd(n / 10, fd);
-		}
-		ft_putchar_fd(48 + n % 10, fd);
-	}
+	return (ft_substr(src, 0, end + 1));
 }
