@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:57:13 by mbertin           #+#    #+#             */
-/*   Updated: 2022/04/21 14:32:22 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/06/21 09:38:45 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*	La fonction memmove() copie n octets depuis la zone mémoire src vers la zone 
 	mémoire dest. Les deux zones peuvent se chevaucher(overlap), à la différence
 	de memcpy. */
-	
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
